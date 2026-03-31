@@ -1,0 +1,12 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Docker Volumes
+postgres_data/
+media_volume/
+
+# OS Files
+.DS_Store
+Thumbs.db
