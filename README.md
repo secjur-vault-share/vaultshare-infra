@@ -69,7 +69,7 @@ make up              # docker compose up -d --build
 make down            # docker compose down
 make test            # Run unit and integration tests (excludes acceptance)
 make test-coverage   # Run tests with HTML coverage report
-make seed            # Populate DB with demo data (5 users, shared files, audit entries)
+make seed            # Populate DB with demo data (3 users, versioned files, shares, audit)
 make verify          # Run acceptance tests against the live stack
 make check           # Ruff + Mypy — read-only CI gate
 make format          # Ruff auto-fix + format
