@@ -1,6 +1,9 @@
 API_DIR := ../vaultshare-api
 
-.PHONY: up down test test-coverage seed verify check format logs
+.PHONY: up down test test-coverage seed verify check format logs createsuperuser
+
+createsuperuser:
+	$(MAKE) -C $(API_DIR) createsuperuser
 
 up:
 	$(MAKE) -C $(API_DIR) up

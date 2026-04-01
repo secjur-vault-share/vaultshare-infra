@@ -40,7 +40,13 @@ This is the **composition root** — start here to run the full stack.
    make seed
    ```
 
-5. Verify features:
+5. Create superuser (for admin access):
+
+   ```bash
+   make createsuperuser
+   ```
+
+6. Verify features:
 
    ```bash
    make verify
@@ -50,7 +56,7 @@ This is the **composition root** — start here to run the full stack.
 
 | Service | Description | Port |
 |---|---|---|
-| `api` | Django 6 REST API via gunicorn | 8000 |
+| `api` | Django 6 REST API + Admin UI | 8000 |
 | `frontend` | Vue 3 SPA via Vite dev server | 3000 |
 | `db` | PostgreSQL 16 (volume-mounted) | 5432 |
 | `redis` | Redis 7 (message broker + cache) | 6379 |
@@ -74,6 +80,7 @@ make verify          # Run acceptance tests against the live stack
 make check           # Ruff + Mypy — read-only CI gate
 make format          # Ruff auto-fix + format
 make logs            # Tail all container logs
+make createsuperuser # Create staff account for admin access at :8000/admin/
 ```
 
 The API repo also exposes `make shell` for a Django shell inside the container.
